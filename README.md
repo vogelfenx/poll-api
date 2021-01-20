@@ -5,5 +5,5 @@ This is an API for a basic poll application (based on official django tutorial "
 
 The used git Strategy is the Github Flow strategy https://guides.github.com/introduction/flow/
 
-Important used tech:
+Important used tech:  
 django-crum https://github.com/ninemoreminutes/django-crum
