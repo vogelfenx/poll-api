@@ -4,10 +4,15 @@ from crum import get_current_request
 
 
 class Poll(models.Model):
-    """
-    Poll Model \n
-    fields: question, created_by, pub_date\n
-    Description: \n
+    """ Poll Model
+
+        Attributes:
+            `question`        CharField
+            `created_by`      ForeignKey
+            `pub_date`        DateTimeField
+            `last_modified`   DateTimeField
+
+    Description:\n
         The model managed polls in db
     """
     question = models.CharField("Question", max_length=100)
