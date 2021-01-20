@@ -1,0 +1,18 @@
+{
+  "python.pythonPath": ".venv\\Scripts\\python.exe",
+  "files.exclude": {
+    // general stuff
+    ".vscode/": true,
+
+    // python stuff
+    ".venv/": true,
+    "**/manage.py": true,
+
+    // project related stuff
+    ".gitignore": true,
+    "*.bat": true,
+    "*.md": true,
+    "**/db.sqlite3": true
+  },
+  "editor.rulers": [80]
+}

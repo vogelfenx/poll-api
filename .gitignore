@@ -5,10 +5,11 @@ __pycache__
 **/migrations/*
 !**/migrations/__init__.py
 
+# db
+api/db.sqlite3
+
 # virtual env stuff
 .venv/*
 !.venv/requirements
 activate-venv.bat
 
-# vscode stuff
-.vscode/

@@ -1,3 +1,10 @@
 from django.contrib import admin
+from .models import Poll
 
-# Register your models here.
+
+class PollAdmin(admin.ModelAdmin):
+    readonly_fields = ('created_by', 'pub_date',)
+    list_display = ('question', 'created_by', 'pub_date')
+
+
+admin.site.register(Poll, PollAdmin)
