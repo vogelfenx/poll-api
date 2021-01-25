@@ -15,7 +15,7 @@ urlpatterns = [
     path("genericviews/choices/", ChoiceListGeneric.as_view(),
          name="genericviews_choices_list"),
     path("genericviews/choices/<int:poll_id>", ChoiceListByPollGeneric.as_view(),
-         name="genericviews_choices_list_by_poll"),
+         name="genericviews_choice_list_by_poll"),
     path("genericviews/vote/", CreateVoteGeneric.as_view(),
-         name="genericviews_vote"),
+         name="genericviews_create_vote"),
 ]
