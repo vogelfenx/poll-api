@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Choice, Poll
-from .serializers import ChoiceSerializer, PollSerializer
+from .serializers import ChoiceSerializer, PollSerializer, VoteSerializer
 
 
 # example of getting the data in json representation using pure Django
@@ -113,4 +113,15 @@ class ChoiceListByPollGeneric(generics.ListAPIView):
 
 
 class CreateVoteGeneric(generics.CreateAPIView):
-    serializer_class = ChoiceSerializer
+    serializer_class = VoteSerializer
+
+    def post(self, request, poll_id, choice_id):
+        data = {
+            'choice': choice_id,
+            'poll': poll_id,
+        }
+        serializer = VoteSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
